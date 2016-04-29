@@ -1,0 +1,24 @@
+{
+    "name": "bemyguest/php-client",
+    "type": "library",
+    "description": "Please refer to  http://docs.bemyguest.apiary.io/  or  http://docs.bemyguestchinese.apiary.io/",
+    "keywords": ["BeMyGuest API v1","API","SDK","API Client"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jarek Tkaczyk @ BeMyGuest",
+            "email": "jarek@bemyguest.com.sg",
+            "homepage": "https://bemyguest.com.sg",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "BeMyGuest\\": "src/"
+        }
+    }
+}
