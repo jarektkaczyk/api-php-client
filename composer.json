@@ -1,8 +1,8 @@
 {
-    "name": "bemyguest/php-client",
+    "name": "bemyguest/api-php-client",
     "type": "library",
     "description": "Please refer to  http://docs.bemyguest.apiary.io/  or  http://docs.bemyguestchinese.apiary.io/",
-    "keywords": ["BeMyGuest API v1","API","SDK","API Client"],
+    "keywords": ["BeMyGuest", "BeMyGuest API v1","API","SDK","API Client"],
     "license": "MIT",
     "authors": [
         {
@@ -13,12 +13,16 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "5.2.*"
+        "php": ">=5.5.9",
+        "apimatic/bemyguestapiv1": "~1.0",
+        "tightenco/collect": "5.2.*"
+    },
+    "require-dev": {
+        "crysalead/kahlan": "~2.5"
     },
     "autoload": {
         "psr-4": {
-            "BeMyGuest\\": "src/"
+            "BeMyGuest\\SdkClient\\": "src/"
         }
     }
 }

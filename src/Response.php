@@ -2,23 +2,20 @@
 
 namespace BeMyGuest\SdkClient;
 
-class Response
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+
+/**
+ * Response is a handy wrapper over the raw response from BMG SDK.
+ * It leverages the goodness provided by Illuminate Collection
+ * class when handling nested array structures from the API.
+ *
+ * @author Jarek Tkaczyk <jarek@bemyguest.com.sg>
+ * @package bemyguest/api-php-client
+ * @version 1.0
+ */
+class Response extends Collection
 {
-    /**
-     * Raw response from the API.
-     *
-     * @var \StdClass
-     */
-    protected $raw;
-
-    /**
-     * @param \StdClass $raw
-     */
-    public function __construct($raw)
-    {
-        $this->raw = $raw;
-    }
-
     /**
      * Get nested data from the API response using dot notation.
      *
@@ -49,12 +46,9 @@ class Response
      */
     public function get($key, $default = null)
     {
-        return data_get($this->raw, $key, $default);
-    }
-
-    public function toArray()
-    {
-        return json_decode(json_encode($this->raw), true);
+        return is_array($item = data_get($this->items, $key, $default))
+                ? new static($item)
+                : $item;
     }
 
     /**
