@@ -25,7 +25,6 @@ If you found a bug in the code or would like to provide an improvement, please d
 
 中文版说明
 ==========
-[![BeMyGuest](https://bemyguest.com.sg/images/site/BMG_Logo_Coloured210.png)](https://bemyguest.com.sg/)
 
 # BeMyGuest API PHP-Client 客户端
 
